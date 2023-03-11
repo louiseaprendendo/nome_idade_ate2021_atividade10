@@ -1,0 +1,17 @@
+import datetime
+
+while True:
+    nome = input("Digite o seu nome completo: ")
+    ano = input("Digite o ano de seu nascimento (entre 1922 e 2021): ")
+    
+    try:
+        ano = int(ano)
+        if ano < 1922 or ano > 2021:
+            raise ValueError
+        break
+    except ValueError:
+        print("Ano de nascimento inválido. Digite novamente.")
+
+ano_atual = datetime.datetime.now().year
+idade = ano_atual - ano
+print(f"Olá, {nome}! Você completou ou irá completar {idade} anos em {ano_atual}.")
